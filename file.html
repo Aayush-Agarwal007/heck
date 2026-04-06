@@ -4,28 +4,421 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Help Nexus - Emergency Response Hub</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo (1).png" alt="">
-            <h3>HELP NEXUS</h3>
+    <header class="navbar">
+        <div class="logo-section">
+            <img src="logo (1).png" alt="Help Nexus" class="logo-img">
+            <h3 class="logo-text">HELP NEXUS</h3>
         </div>
-        <ul>
-            <li><a href="#">EMERGENCY CONTACTS</a></li>
-            <li><a href="#">DISASTER RESPONSE</a></li>
-            <li><a href="#"> REAL-TIME ALERT</a></li>
-            <li><a href="#">STAY SAFE</a></li>
-        </ul>
-        <div class="bt">
-            <a class="btn" href="#">Login</a>
-            <a class="btn" href="#">Sign up</a>
+        <nav class="nav-menu">
+            <a href="#emergency" class="nav-link">
+                <i class="fas fa-phone"></i> Emergency Contacts
+            </a>
+            <a href="#disaster" class="nav-link">
+                <i class="fas fa-exclamation-triangle"></i> Disaster Response
+            </a>
+            <a href="#alerts" class="nav-link">
+                <i class="fas fa-bell"></i> Real-Time Alerts
+            </a>
+            <a href="#safety" class="nav-link">
+                <i class="fas fa-shield"></i> Stay Safe
+            </a>
+        </nav>
+        <div class="navbar-actions">
+            <div class="search-bar">
+                <input type="text" placeholder="Search resources..." class="search-input">
+                <i class="fas fa-search"></i>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="auth-buttons">
+                <a class="btn btn-login" href="#">Login</a>
+                <a class="btn btn-signup" href="#">Sign Up</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <section class="hero">
-        
+        <div class="hero-content">
+            <h1 class="hero-title">Emergency Help at Your Fingertips</h1>
+            <p class="hero-subtitle">Connect instantly with emergency services and safety resources</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showAlert('emergency')">
+                    <i class="fas fa-phone-alt"></i> Call Emergency
+                </button>
+                <button class="btn btn-secondary" onclick="showAlert('alerts')">
+                    <i class="fas fa-map-marker-alt"></i> Find Nearby Help
+                </button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
     </section>
+
+    <section id="features" class="features">
+        <h2>Why Choose Help Nexus?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Lightning Fast</h3>
+                <p>Connect to emergency services in seconds with our optimized response system</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Coverage</h3>
+                <p>Access emergency contacts and resources worldwide, anytime, anywhere</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>100% Secure</h3>
+                <p>Your data is encrypted and protected with military-grade security</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our expert team is always available to assist you in emergencies</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="alerts" class="alerts-section">
+        <h2>Real-Time Alerts - India</h2>
+        <div class="alerts-container">
+            <div class="alert-item alert-critical">
+                <div class="alert-badge">Critical</div>
+                <i class="fas fa-exclamation-circle"></i>
+                <h4>Monsoon Alert - Delhi NCR</h4>
+                <p>Heavy rainfall expected. Avoid waterlogged areas. Stay safe indoors if possible.</p>
+                <span class="alert-time">2 minutes ago</span>
+            </div>
+            <div class="alert-item alert-warning">
+                <div class="alert-badge">Warning</div>
+                <i class="fas fa-warning"></i>
+                <h4>Traffic Update - Mumbai</h4>
+                <p>Severe congestion on Western Express Highway. Use alternate routes or plan travel.</p>
+                <span class="alert-time">5 minutes ago</span>
+            </div>
+            <div class="alert-item alert-info">
+                <div class="alert-badge">Info</div>
+                <i class="fas fa-info-circle"></i>
+                <h4>Blood Bank Drive - Bangalore</h4>
+                <p>Apollo Hospital organizing blood donation camp. O+ and B- donors urgently needed!</p>
+                <span class="alert-time">15 minutes ago</span>
+            </div>
+            <div class="alert-item alert-warning">
+                <div class="alert-badge">Warning</div>
+                <i class="fas fa-warning"></i>
+                <h4>Fire Alert - Hyderabad</h4>
+                <p>Fire department responding to incident in Kukatpally area. Use alternate routes.</p>
+                <span class="alert-time">8 minutes ago</span>
+            </div>
+            <div class="alert-item alert-info">
+                <div class="alert-badge">Info</div>
+                <i class="fas fa-info-circle"></i>
+                <h4>Medical Camp - Chennai</h4>
+                <p>Free health checkup at Guindy Government Hospital today. All are welcome.</p>
+                <span class="alert-time">25 minutes ago</span>
+            </div>
+            <div class="alert-item alert-critical">
+                <div class="alert-badge">Critical</div>
+                <i class="fas fa-exclamation-circle"></i>
+                <h4>Weather Alert - Kolkata</h4>
+                <p>Severe heat wave warning. Keep children and elderly indoors. Drink plenty of water.</p>
+                <span class="alert-time">12 minutes ago</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="emergency" class="emergency-section">
+        <h2>Emergency Contacts - India</h2>
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <div class="contact-header emergency-911">
+                    <i class="fas fa-ambulance"></i>
+                </div>
+                <h3>100/112</h3>
+                <p>Police & Emergency Services</p>
+                <button class="contact-btn" onclick="call('100')">Call Now</button>
+            </div>
+            <div class="contact-card">
+                <div class="contact-header emergency-poison">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>1066 / 1122</h3>
+                <p>Poison Control & Medical</p>
+                <button class="contact-btn" onclick="call('1066')">Call Now</button>
+            </div>
+            <div class="contact-card">
+                <div class="contact-header emergency-mental">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>1639 / 9152987821</h3>
+                <p>Mental Health Support</p>
+                <button class="contact-btn" onclick="call('1639')">Call Now</button>
+            </div>
+            <div class="contact-card">
+                <div class="contact-header emergency-abuse">
+                    <i class="fas fa-heart-broken"></i>
+                </div>
+                <h3>1098 / 181</h3>
+                <p>Women Safety & Child Abuse</p>
+                <button class="contact-btn" onclick="call('1098')">Call Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety" class="safety-tips">
+        <h2>Safety Tips</h2>
+        <div class="tips-grid">
+            <div class="tip-card" onclick="toggleTip(this)">
+                <h3><i class="fas fa-home"></i> Natural Disasters</h3>
+                <p>Learn how to prepare and protect your home from natural disasters like earthquakes, hurricanes, and floods.</p>
+            </div>
+            <div class="tip-card" onclick="toggleTip(this)">
+                <h3><i class="fas fa-car"></i> Road Safety</h3>
+                <p>Essential tips for safe driving, what to do in case of accidents, and emergency vehicle protocols.</p>
+            </div>
+            <div class="tip-card" onclick="toggleTip(this)">
+                <h3><i class="fas fa-fire"></i> Fire Safety</h3>
+                <p>Fire prevention methods, evacuation procedures, and how to help others during fire emergencies.</p>
+            </div>
+            <div class="tip-card" onclick="toggleTip(this)">
+                <h3><i class="fas fa-person"></i> First Aid</h3>
+                <p>Basic first aid techniques that could save lives in critical situations before medical help arrives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="disaster" class="disaster-response">
+        <h2>Help Nexus India - By Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="500000">0</div>
+                <p>Lives Aided</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="28">0</div>
+                <p>States Covered</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="2500000">0</div>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="60">0</div>
+                <p>Seconds Avg Response</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Access Platform</h3>
+                <p>Visit Help Nexus or use our mobile app</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Select Help Type</h3>
+                <p>Choose emergency type from our options</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Connect Instantly</h3>
+                <p>Get connected to nearest responders</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Get Help</h3>
+                <p>Receive immediate assistance</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Indians Say</h2>
+        <div class="testimonials-carousel">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Help Nexus helped my mother during a medical emergency in Delhi. Connected within 2 minutes. Truly lifesaving!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RK</div>
+                    <div>
+                        <strong>Rajesh Kumar</strong>
+                        <span>Delhi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"As a fire officer in Mumbai, this app makes coordination so much easier. Real-time updates are incredible!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AS</div>
+                    <div>
+                        <strong>Aditya Singh</strong>
+                        <span>Fire Officer, Mumbai</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"When my daughter had an accident in Bangalore, Help Nexus connected me instantly. Best safety app in India!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PP</div>
+                    <div>
+                        <strong>Priya Patel</strong>
+                        <span>Bangalore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is Help Nexus available across all of India?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Help Nexus operates across all 28 states and 8 union territories of India. We partner with local emergency services, hospitals, and police departments to ensure seamless coverage in urban and rural areas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What are the main emergency numbers to use?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>In India, use 112 (unified emergency number) or the specific numbers: 100 (Police), 101 (Fire), 102 (Ambulance). Our app integrates with all these services for quick response. You can also use Help Nexus directly for faster coordination.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is my personal information secure?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We use military-grade encryption (AES-256) and comply with India's Personal Data Protection Bill and other data protection regulations. Your privacy is our highest priority.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Does the app work with Indian hospitals?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We partner with major hospital chains including Apollo, Max Healthcare, Fortis, and government medical colleges across India. The app provides direct connections to nearby hospitals and available beds.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is Help Nexus completely free to use?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Emergency assistance through Help Nexus is completely free for all Indian citizens. We also offer premium features like health tracking and family monitoring at affordable subscription prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Stay Prepared. Stay Safe.</h2>
+            <p>Join millions of people who trust Help Nexus for emergency support</p>
+            <button class="btn btn-large" onclick="scrollToSection('#emergency')">
+                <i class="fas fa-sign-in-alt"></i> Get Started Now
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Help Nexus India</h4>
+                <p>Help Nexus is India's leading emergency response platform, dedicated to providing instant assistance to citizens across all states. Saving lives, one connection at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Emergency Numbers</a></li>
+                    <li><a href="#">Safety Resources</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Emergency Numbers</h4>
+                <ul>
+                    <li><a href="#">Police: 100</a></li>
+                    <li><a href="#">Fire: 101</a></li>
+                    <li><a href="#">Ambulance: 102</a></li>
+                    <li><a href="#">Unified: 112</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Help Nexus India. All rights reserved. | Emergency: 100/112 | Made with ❤️ for India</p>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
