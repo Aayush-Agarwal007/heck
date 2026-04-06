@@ -1,0 +1,36 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# Environment
+.env
+.env.local
+node_modules/
+*.log
+
+# Build / Dist
+dist/
+build/
+*.min.js
+*.min.css
+
+# Archive
+archive/
+
+# Misc
+*.bak
+*.tmp
